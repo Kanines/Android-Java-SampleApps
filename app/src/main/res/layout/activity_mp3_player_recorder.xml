@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sampleapps.Mp3PlayerRecorderActivity">
+
+    <Button
+        android:id="@+id/volumeDown"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="48dp"
+        android:text="-"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        android:layout_marginEnd="16dp" />
+
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        android:text="Start"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <Button
+        android:id="@+id/stopButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="5dp"
+        android:text="Stop"
+        app:layout_constraintLeft_toRightOf="@+id/startButton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="7dp" />
+
+
+    <TextView
+        android:id="@+id/volumeTextBox"
+        android:layout_width="35dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginRight="12dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintRight_toLeftOf="@+id/volumeUp"
+        app:layout_constraintTop_toBottomOf="@+id/listView" />
+
+    <TextView
+        android:id="@+id/currentFileTextBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="32dp"
+        android:text="none"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toRightOf="@+id/stopButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/reloadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reload"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/stopRecButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="121dp"
+        android:text="Stop Rec"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        android:layout_marginStart="121dp" />
+
+    <Button
+        android:id="@+id/startRecButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Start Rec"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        android:layout_marginStart="16dp" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="210dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/volumeUp"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="8dp"
+        android:text="+"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        app:layout_constraintRight_toLeftOf="@+id/volumeDown"
+        android:layout_marginEnd="8dp" />
+
+
+    <com.sampleapps.VisualizerView
+        android:id="@+id/myvisualizerview"
+        android:layout_width="218dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="127dp"
+        app:layout_constraintTop_toBottomOf="@+id/listView"
+        android:layout_marginLeft="83dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/volumeLabel"
+        android:layout_width="84dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="58dp"
+        android:text="Volume level:"
+        android:textAlignment="center"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/volumeTextBox"
+        app:layout_constraintTop_toBottomOf="@+id/listView" />
+
+    <RadioButton
+        android:id="@+id/recordingIndicator"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:checked="false"
+        android:clickable="false"
+        app:layout_constraintStart_toEndOf="@+id/stopRecButton"
+        app:layout_constraintTop_toBottomOf="@+id/listView" />
+
+    <TextView
+        android:id="@+id/selectedFileLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="8dp"
+        android:text="Selected File:"
+        app:layout_constraintBottom_toTopOf="@+id/currentFileTextBox"
+        app:layout_constraintStart_toEndOf="@+id/stopButton" />
+
+</android.support.constraint.ConstraintLayout>
